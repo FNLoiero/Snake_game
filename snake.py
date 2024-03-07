@@ -37,6 +37,13 @@ class Snake:
         t.goto(last_tail.xcor(), last_tail.ycor())
         self.segments.append(t)
 
+    def reset(self):
+        for seg in self.segments:
+            seg.goto(1800,1800)
+        self.segments.clear()
+        self.create_Snake()
+        self.head = self.segments[0]
+
     def up(self):
         if self.head.heading() != DOWN:
             self.head.setheading(UP)
